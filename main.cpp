@@ -15,7 +15,6 @@ int main() {
 	int hour = 1;
 	int result = 0;
 
-
 	for (int i = 1; i < 10; i++) {
 		price += 1072;
 		printf("%dŠÔ‚Å%d‰~\n", i, price);
