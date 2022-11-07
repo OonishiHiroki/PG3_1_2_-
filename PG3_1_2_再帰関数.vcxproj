@@ -24,6 +24,7 @@
     <ProjectGuid>{84c01f3f-59f4-4d4d-b929-e1ab0cbc1d54}</ProjectGuid>
     <RootNamespace>PG312再帰関数</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PG3</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
