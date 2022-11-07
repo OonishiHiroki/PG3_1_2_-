@@ -44,7 +44,8 @@ int main(void) {
 	printf("start\n");
 
 	printf("”¼(Šï”)‚È‚ç[1],’š(‹ô”)‚È‚ç[0]‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-	scanf_s("%d\n", &number);
+
+	scanf_s("%d", &number);
 
 	p = DiceResult;
 
