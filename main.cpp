@@ -1,26 +1,55 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <time.h>
 
-int RecoursiveSalary(int hour) {
+typedef void (*PFunc)(int*);
 
-	if (hour == 1) {
-		return (100);
+void DiceResult(int* number) {
+
+	srand(time(nullptr));
+	int dice = rand() % 5 + 1;
+
+	if (dice % 2 == *number) {
+		printf("当たり\n");
 	}
-	return RecoursiveSalary(hour - 1) * 2 - 50;
+	else {
+		printf("はずれ\n");
+	}
+
+	printf("さいころの出目は%dでした\n", dice);
 
 }
 
-int main() {
+void SetTimeout(PFunc p, int second, int number) {
 
-	int price = 0;
-	int hour = 1;
-	int result = 0;
+	printf("結果...");
+	
+	//コールバック関数を呼び出す
+	Sleep(second);
 
-	for (int i = 1; i < 10; i++) {
-		price += 1072;
-		printf("%d時間で%d円\n", i, price);
+	//macやUnix系OSの場合
+	//sleep(second);
+	p(&number);
 
-		result += RecoursiveSalary(i);
-		printf("%d時間で%d円\n\n", i, result);
-	}
+}
+
+int main(void) {
+
+	PFunc p;
+
+	int number = 0;
+	int second = 3000;
+
+	printf("start\n");
+
+	printf("半(奇数)なら[1],丁(偶数)なら[0]を入力してください\n");
+	scanf_s("%d\n", &number);
+
+	p = DiceResult;
+
+	SetTimeout(p, second, number);
+
 	return 0;
+
 }
