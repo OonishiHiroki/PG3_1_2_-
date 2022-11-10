@@ -6,30 +6,12 @@
 
 typedef void (*PFunc)(int);
 
-void DiceResult(int number) {
-
-	srand(time(nullptr));
-	int dice = rand() % 5 + 1;
-
-	if (dice % 2 == number) {
-		printf("ìñÇΩÇË\n");
-	}
-	else {
-		printf("ÇÕÇ∏ÇÍ\n");
-	}
-
-	printf("Ç≥Ç¢Ç±ÇÎÇÃèoñ⁄ÇÕ%dÇ≈ÇµÇΩ\n", dice);
-
-}
-
-
 int main(void) {
 
 	PFunc p;
 
 	int number = 0;
 	int second = 3;
-	p = DiceResult;
 
 	printf("start\n");
 
@@ -47,6 +29,22 @@ int main(void) {
 		//sleep(second);
 		p(number);
 	};
+
+	std::function<void(int)>DiceResult = [&](int number) {
+		srand(time(nullptr));
+		int dice = rand() % 6 + 1;
+
+		if (dice % 2 == number) {
+			printf("ìñÇΩÇË\n");
+		}
+		else {
+			printf("ÇÕÇ∏ÇÍ\n");
+		}
+
+		printf("Ç≥Ç¢Ç±ÇÎÇÃèoñ⁄ÇÕ%dÇ≈ÇµÇΩ\n", dice);
+	};
+
+	p = DiceResult;
 
 	SetTimeout(p, second);
 
