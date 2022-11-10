@@ -6,6 +6,19 @@
 
 typedef void (*PFunc)(int);
 
+void DiceResult(int number) {
+	srand(time(nullptr));
+	int dice = rand() % 6 + 1;
+
+	if (dice % 2 == number) {
+		printf("当たり\n");
+	}
+	else {
+		printf("はずれ\n");
+	}
+	printf("サイコロの出目は%dでした\n", dice);
+};
+
 int main(void) {
 
 	PFunc p;
@@ -28,20 +41,6 @@ int main(void) {
 		//macやUnix系OSの場合
 		//sleep(second);
 		p(number);
-	};
-
-	std::function<void(int)>DiceResult = [&](int number) {
-		srand(time(nullptr));
-		int dice = rand() % 6 + 1;
-
-		if (dice % 2 == number) {
-			printf("当たり\n");
-		}
-		else {
-			printf("はずれ\n");
-		}
-
-		printf("さいころの出目は%dでした\n", dice);
 	};
 
 	p = DiceResult;
