@@ -9,7 +9,7 @@ typedef void (*PFunc)(int);
 void DiceResult(int number) {
 
 	srand(time(nullptr));
-	int dice = rand() % 5 + 1;
+	int dice = rand() % 6 + 1;
 
 	if (dice % 2 == number) {
 		printf("“–‚½‚è\n");
