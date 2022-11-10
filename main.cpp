@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <time.h>
-#include <functional>
 
 typedef void (*PFunc)(int);
 
@@ -22,6 +21,16 @@ void DiceResult(int number) {
 
 }
 
+void SetTimeout(PFunc p, int second, int number) {
+		printf("結果...");
+
+		//コールバック関数を呼び出す
+		Sleep(second * 1000);
+
+		//macやUnix系OSの場合
+		//sleep(second);
+		p(number);
+};
 
 int main(void) {
 
@@ -37,18 +46,8 @@ int main(void) {
 
 	scanf_s("%d", &number);
 
-	std::function<void(PFunc, int)>SetTimeout = [=](PFunc p, int second) {
-		printf("結果...");
 
-		//コールバック関数を呼び出す
-		Sleep(second * 1000);
-
-		//macやUnix系OSの場合
-		//sleep(second);
-		p(number);
-	};
-
-	SetTimeout(p, second);
+	SetTimeout(p, second,number);
 
 	return 0;
 
