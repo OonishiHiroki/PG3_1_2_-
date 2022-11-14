@@ -48,5 +48,4 @@ int main(void) {
 	SetTimeout(p, second);
 
 	return 0;
-
 }
