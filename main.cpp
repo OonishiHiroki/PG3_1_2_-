@@ -47,5 +47,7 @@ int main(void) {
 
 	SetTimeout(p, second);
 
+	system("pause");
+
 	return 0;
 }
