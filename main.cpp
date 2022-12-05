@@ -33,7 +33,6 @@ int main(void) {
 	scanf_s("%d", &number);
 
 	std::function<void(PFunc, int)>SetTimeout = [=](PFunc p, int second) {
-		printf("結果...");
 
 		//コールバック関数を呼び出す
 		Sleep(second * 1000);
