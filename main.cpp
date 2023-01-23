@@ -8,19 +8,7 @@ using namespace std;
 
 int main() {
 #pragma region
-	/*std::list<int>lst(33, 4);*/
-	//list<int>lst{114, 514, 364};//‰Šúİ’èƒŠƒXƒg
-
-	//lst.push_front(7);
-	//lst.push_back(777);
-	//for (int i = 0; i < 5; i++)
-	//{
-	//	lst.push_front(i);
-	//}
-	//for (int i = 0; i < 5; i++)
-	//{
-	//	lst.push_back(i);
-	//}
+	
 #pragma endregion
 
 	list<const char*>Station = { 
