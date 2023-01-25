@@ -5,23 +5,21 @@
 using namespace std;
 
 Enemy* enemyFirst = new Enemy;
-Enemy* enemySecond = new Enemy;
-Enemy* enemyThird = new Enemy;
 
-
-void(Enemy::*Enemy::Attacktable[])() {
-	& Enemy::Approach,
+void(Enemy::* Enemy::Attacktable[])() {
+	&Enemy::Approach,
 	& Enemy::Shooting,
 	& Enemy::Breakaway
 };
 
 void Enemy::Update() {
-	static_cast<size_t>(phase_);
-	(this->*Attacktable[0])();
+	(this->*Attacktable[static_cast<size_t>(phase_)])();
 	Sleep(2 * 1000);
-	(this->*Attacktable[1])();
-	Sleep(2 * 1000);
-	(this->*Attacktable[2])();
+	phase_++;
+	if (phase_ >= 3) {
+		phase_ = 0;
+	}
+
 }
 
 void Enemy::Approach() {

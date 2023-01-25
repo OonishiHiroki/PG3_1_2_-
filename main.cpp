@@ -7,8 +7,9 @@ using namespace std;
 int main() {
 
 	Enemy* enemy = new Enemy;
-
-	enemy->Update();
+	while (true) {
+		enemy->Update();
+	}
 
 	return 0;
 }
