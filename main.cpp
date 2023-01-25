@@ -1,13 +1,11 @@
-#include <stdlib.h>
-#include <list>//listコンテナ
-#include <iterator>
-#include <string>
-#include <iostream>
+#include "SceneManager.h"
 
-using namespace std;
+int sceneNo = 0;
 
 int main() {
 
+	//インスタンスを取得して、すぐ使用
+	SceneManager::GetInstance()->ChangeScene(sceneNo);
 
 	return 0;
 }

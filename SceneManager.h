@@ -1,14 +1,19 @@
 #pragma once
-class ChangeScene final{
+class SceneManager final{
 private:
 	//コンストラクタをprivateにする
-	ChangeScene();
+	SceneManager();
 	//デストラクタをprivateにする
-	~ChangeScene();
+	~SceneManager();
 public:
 	//コピーコンストラクタを無効にする
-	ChangeScene(const ChangeScene& obj) = delete;
+	SceneManager(const SceneManager& obj) = delete;
 	//代入演算子を無効にする
-	ChangeScene& operator=(const ChangeScene& obj);
+	SceneManager& operator=(const SceneManager& obj) = delete;
+
+	static SceneManager* GetInstance();
+
+	void ChangeScene(int sceneNo);
+	
 };
 
