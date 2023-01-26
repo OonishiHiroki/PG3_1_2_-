@@ -1,15 +1,23 @@
-#include "Enemy.h"
+#include "IShape.h"
+#include "Circle.h"
+#include "Rectangle.h"
 #include <stdio.h>
-#include <windows.h>
-#include <iostream>
 using namespace std;
 
 int main() {
+	IShape* Ishape[2];
 
-	Enemy* enemy = new Enemy;
-	while (true) {
-		enemy->Update();
-	}
+	Ishape[0] = new Circle;
+	Ishape[1] = new Rectangle;
+
+	Ishape[0]->Size();
+	Ishape[0]->Draw();
+
+	Ishape[1]->Size();
+	Ishape[1]->Draw();
+
+	delete Ishape[0];
+	delete Ishape[1];
 
 	return 0;
 }

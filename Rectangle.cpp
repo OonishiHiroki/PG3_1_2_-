@@ -1,0 +1,9 @@
+#include "Rectangle.h"
+#include <stdio.h>
+void Rectangle::Size() {
+	size = vertical * horizontal;
+}
+
+void Rectangle::Draw() {
+	printf("ãÈå`ÇÃñ êœ:%f\n", size);
+}
